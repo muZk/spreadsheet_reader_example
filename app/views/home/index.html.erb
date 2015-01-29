@@ -1,0 +1,34 @@
+<%= form_tag root_path,  multipart: true do %>
+
+    <% unless @row.blank? %>
+        <% if @row.errors.any? %>
+            <%= "Errors in row #{@row.row_number}:" %>
+            <ul>
+              <% @row.errors.full_messages.each do |error| %>
+                  <li><%= error %></li>
+              <% end %>
+            </ul>
+        <% end %>
+    <% end %>
+
+    <%= file_field_tag :file %>
+
+    <%= submit_tag 'send' %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% User.all.each do |user| %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.email %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
