@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails_spreadsheet_reader', '0.0.1'
+gem 'rails_spreadsheet_reader', '0.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
